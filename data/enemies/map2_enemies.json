@@ -1,0 +1,71 @@
+{
+    "fast": {
+        "hp": 30,
+        "speed": 200,
+        "color": [80, 255, 120],
+        "reward": 25,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/fast/walk",
+                "scale": [56, 56]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/fast/death",
+                "scale": [56, 56]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/fast/attack",
+                "scale": [56, 56]
+            }
+        }
+    },
+    "tank": {
+        "hp": 100,
+        "speed": 70,
+        "color": [120, 120, 255],
+        "reward": 35,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/tank/walk",
+                "scale": [60, 60]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/tank/death",
+                "scale": [60, 60]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/tank/attack",
+                "scale": [60, 60]
+            }
+        }
+    },
+    "boss": {
+        "hp": 1500,
+        "speed": 80,
+        "color": [255, 80, 80],
+        "reward": 100,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/boss/walk",
+                "scale": [72, 72]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/boss/death",
+                "scale": [72, 72]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map2/boss/attack",
+                "scale": [72, 72]
+            }
+        }
+    }
+}

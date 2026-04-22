@@ -1,0 +1,26 @@
+[
+    {
+        "enemies": [
+            {"type": "normal", "count": 10, "delay": 0.75}
+        ]
+    },
+    {
+        "enemies": [
+            {"type": "normal", "count": 10, "delay": 0.5},
+            {"type": "fast", "count": 5, "delay": 0.4}
+        ]
+    },
+    {
+        "enemies": [
+            {"type": "normal", "count": 15, "delay": 0.4},
+            {"type": "fast", "count": 10, "delay": 0.6},
+            {"type": "tank", "count": 5, "delay": 0.5}
+        ]
+    },
+    
+    {
+        "enemies": [
+            {"type": "boss", "count": 3, "delay": 1.0}
+        ]
+    }
+]

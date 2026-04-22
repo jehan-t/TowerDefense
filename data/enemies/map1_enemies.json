@@ -1,0 +1,146 @@
+{
+    "normal": {
+        "hp": 50,
+        "speed": 120,
+        "color": [
+            255,
+            200,
+            50
+        ],
+        "reward": 20,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/normal/walk",
+                "scale": [
+                    80,
+                    64
+                ]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/normal/death",
+                "scale": [
+                    80,
+                    64
+                ]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/normal/attack",
+                "scale": [
+                    80,
+                    64
+                ]
+            }
+        }
+    },
+    "fast": {
+        "hp": 30,
+        "speed": 200,
+        "color": [
+            80,
+            255,
+            120
+        ],
+        "reward": 30,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/fast/walk",
+                "scale": [
+                    56,
+                    60
+                ]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/fast/death",
+                "scale": [
+                    56,
+                    60
+                ]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/fast/attack",
+                "scale": [
+                    56,
+                    60
+                ]
+            }
+        }
+    },
+    "tank": {
+        "hp": 300,
+        "speed": 70,
+        "color": [
+            120,
+            120,
+            255
+        ],
+        "reward": 40,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/tank/walk",
+                "scale": [
+                    60,
+                    60
+                ]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/tank/death",
+                "scale": [
+                    60,
+                    60
+                ]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/tank/attack",
+                "scale": [
+                    60,
+                    60
+                ]
+            }
+        }
+    },
+    "boss": {
+        "hp": 750,
+        "speed": 100,
+        "color": [
+            255,
+            80,
+            80
+        ],
+        "reward": 200,
+        "animations": {
+            "walk": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/boss/walk",
+                "scale": [
+                    120,
+                    120
+                ]
+            },
+            "death": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/boss/death",
+                "scale": [
+                    120,
+                    120
+                ]
+            },
+            "attack": {
+                "mode": "folder",
+                "path": "assets/images/enemies/map1/boss/attack",
+                "scale": [
+                    120,
+                    120
+                ]
+            }
+        }
+    }
+}
