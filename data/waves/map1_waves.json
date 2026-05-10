@@ -1,7 +1,7 @@
 [
     {
         "enemies": [
-            {"type": "normal", "count": 10, "delay": 0.75}
+            {"type": "normal", "count": 11, "delay": 0.75}
         ]
     },
     {
@@ -17,7 +17,6 @@
             {"type": "tank", "count": 5, "delay": 0.5}
         ]
     },
-    
     {
         "enemies": [
             {"type": "boss", "count": 3, "delay": 1.0}

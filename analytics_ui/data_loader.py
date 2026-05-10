@@ -61,7 +61,6 @@ class StatsDataLoader:
             "spawn_time",
             "death_time",
             "survival_time",
-            "enemies_killed",
             "towers_placed",
         }
 
@@ -104,7 +103,7 @@ class StatsDataLoader:
     def load_wave_summary(self) -> pd.DataFrame:
         return self._safe_read_csv(
             "wave_summary.csv",
-            ["session_id", "map_id", "wave", "enemies_killed", "towers_placed"]
+            ["session_id", "map_id", "wave", "towers_placed"]
         )
 
     def load_all(self) -> dict:

@@ -25,7 +25,7 @@ class AudioManager:
 
     def _build_sounds(self):
         self.sounds["shoot"] = self._make_tone(
-            freq=720, duration=0.06, volume=0.1, wave_type="square"
+            freq=720, duration=0.06, volume=0.18, wave_type="square"
         )
         self.sounds["death"] = self._make_sweep(
             start_freq=260, end_freq=110, duration=0.18, volume=0.20
@@ -177,7 +177,7 @@ class AudioManager:
 
         try:
             pygame.mixer.music.load("assets/sounds/music/bg_music.mp3")
-            pygame.mixer.music.set_volume(0.2)  # ปรับความดังตรงนี้
+            pygame.mixer.music.set_volume(0.15)  # ปรับความดังตรงนี้
             pygame.mixer.music.play(-1, fade_ms=1000)
         except Exception as e:
             print(f"[WARN] Failed to load music: {e}")

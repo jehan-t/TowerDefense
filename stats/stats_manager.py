@@ -14,8 +14,11 @@ class StatsManager:
         self.session_elapsed = 0.0
 
         self.enemy_spawn_lookup = {}
-        self.kills_per_wave_counter = {}
         self.towers_placed_per_wave_counter = {}
+
+        # ติดตาม wave ที่ finalize ไปแล้ว (ไม่ถูกล้างพร้อม save_all)
+        # กันบั๊กเรียกซ้ำทุก frame ตอน wave จบ
+        self.finalized_waves = set()
 
         self.tower_usage_rows = []
         self.enemy_defeat_rows = []
@@ -95,26 +98,20 @@ class StatsManager:
             "survival_time": round(survival_time, 3),
         })
 
-        self.kills_per_wave_counter[wave] = (
-            self.kills_per_wave_counter.get(wave, 0) + 1
-        )
-
         if enemy_id in self.enemy_spawn_lookup:
             del self.enemy_spawn_lookup[enemy_id]
 
     def finalize_wave_if_needed(self, wave, map_id):
-        existing = [
-            row for row in self.wave_summary_rows
-            if row["wave"] == wave and row["map_id"] == map_id and row["session_id"] == self.session_id
-        ]
-        if existing:
+        key = (self.session_id, map_id, wave)
+        if key in self.finalized_waves:
             return
+
+        self.finalized_waves.add(key)
 
         self.wave_summary_rows.append({
             "session_id": self.session_id,
             "map_id": map_id,
             "wave": wave,
-            "enemies_killed": self.kills_per_wave_counter.get(wave, 0),
             "towers_placed": self.towers_placed_per_wave_counter.get(wave, 0),
         })
 
@@ -170,7 +167,7 @@ class StatsManager:
 
         self._append_or_create_csv(
             "wave_summary.csv",
-            ["session_id", "map_id", "wave", "enemies_killed", "towers_placed"],
+            ["session_id", "map_id", "wave", "towers_placed"],
             self.wave_summary_rows,
         )
 

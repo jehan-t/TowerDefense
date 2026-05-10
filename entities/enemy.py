@@ -45,6 +45,7 @@ class Enemy:
 
         # หันซ้าย/ขวาเท่านั้น
         self.facing_right = True
+        self.last_move_dir_x = 1
 
         # animation speed
         self.walk_anim_speed = 0.10
@@ -163,7 +164,9 @@ class Enemy:
         dy = target_y - self.y
         dist = math.hypot(dx, dy)
 
-        if dist < 2:
+        if dist < 6:
+            self.x = target_x
+            self.y = target_y
             self.current_index += 1
             return
 
@@ -171,10 +174,11 @@ class Enemy:
         dir_y = dy / dist
 
         # หันซ้าย/ขวาเท่านั้น
-        if dir_x > 0.05:
-            self.facing_right = True
-        elif dir_x < -0.05:
-            self.facing_right = False
+        # หันซ้าย/ขวาเฉพาะตอนเดินแนวนอนชัดเจน
+        # กัน fast enemy สะบัดหน้ากลับไปมาเวลาถึงจุดเลี้ยว
+        if abs(dir_x) > 0.25:
+            self.last_move_dir_x = 1 if dir_x > 0 else -1
+            self.facing_right = self.last_move_dir_x > 0
 
         speed = self.base_speed * self.slow_factor
 

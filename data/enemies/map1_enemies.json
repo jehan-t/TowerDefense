@@ -72,14 +72,14 @@
         }
     },
     "tank": {
-        "hp": 300,
+        "hp": 250,
         "speed": 70,
         "color": [
             120,
             120,
             255
         ],
-        "reward": 40,
+        "reward": 50,
         "animations": {
             "walk": {
                 "mode": "folder",
@@ -108,7 +108,7 @@
         }
     },
     "boss": {
-        "hp": 750,
+        "hp": 500,
         "speed": 100,
         "color": [
             255,

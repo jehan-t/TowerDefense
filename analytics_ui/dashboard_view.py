@@ -49,7 +49,6 @@ class DashboardView(ctk.CTkFrame):
             ("Enemy Death Position", self.show_enemy_death_position_chart),
             ("Tower Placement Position", self.show_tower_position_chart),
             ("Enemy Survival Time", self.show_enemy_survival_chart),
-            ("Enemies Killed per Wave", self.show_wave_kill_chart),
             ("Refresh Data", self.refresh_all),
         ]
 
@@ -366,33 +365,3 @@ class DashboardView(ctk.CTkFrame):
         fig.tight_layout()
         self._draw_figure(fig)
 
-    def show_wave_kill_chart(self):
-        self.chart_title.configure(text="Enemies Killed per Wave")
-        df = self._normalize_df(self.data["wave_summary"])
-
-        wave_col = self._find_column(df, ["wave"])
-        kills_col = self._find_column(df, ["enemies_killed", "kills"])
-
-        if df.empty or wave_col is None or kills_col is None:
-            self._draw_figure(self._make_empty_figure("No wave summary data"))
-            return
-
-        df[wave_col] = pd.to_numeric(df[wave_col], errors="coerce")
-        df[kills_col] = pd.to_numeric(df[kills_col], errors="coerce")
-        df = df.dropna(subset=[wave_col, kills_col])
-
-        if df.empty:
-            self._draw_figure(self._make_empty_figure("No valid wave/kill values"))
-            return
-
-        grouped = df.groupby(wave_col, as_index=False)[kills_col].sum()
-
-        fig = Figure(figsize=(8, 5), dpi=100)
-        ax = fig.add_subplot(111)
-        ax.bar(grouped[wave_col].astype(int).astype(str), grouped[kills_col])
-        ax.set_title("Enemies Killed per Wave")
-        ax.set_xlabel("Wave")
-        ax.set_ylabel("Enemies Killed")
-        fig.tight_layout()
-
-        self._draw_figure(fig)

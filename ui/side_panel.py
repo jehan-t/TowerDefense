@@ -34,10 +34,7 @@ class SidePanel:
         self.game_state.selected_tower = None
 
     def upgrade_selected(self):
-        tower = self.game_state.selected_tower
-        if tower and tower.level == 1 and self.game_state.gold >= 100:
-            tower.upgrade()
-            self.game_state.gold -= 100
+        self.game_state.request_upgrade_selected = True
 
     def sell_selected(self):
         tower = self.game_state.selected_tower
