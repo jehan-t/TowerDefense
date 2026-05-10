@@ -218,6 +218,30 @@ Possible future improvements:
    Source: https://seaborn.pydata.org/  
    License: BSD-3-Clause
 
+6. **Free 2D Knight Sprite Sheets**
+   - Creator: Free Game Assets (GUI, Sprite, Tilesets)
+   - Type: Character / knight sprite assets
+   - Source: https://free-game-assets.itch.io/free-2d-knight-sprite-sheets
+   - License / Usage: The asset page states that the assets can be used to create commercial mobile games and other platforms.
+
+7. **Spire - Tower Pack 1**
+   - Creator / Distributor: Foozle
+   - Type: Tower sprites, tower animations, projectiles, and impact animations
+   - Source: https://foozlecc.itch.io/spire-tower-pack-1
+   - License: Creative Commons Zero (CC0)
+
+8. **Spire - Tower Pack 4**
+   - Creator / Distributor: Foozle
+   - Type: Tower sprites, tower animations, projectiles, and impact animations
+   - Source: https://foozlecc.itch.io/spire-tower-pack-4
+   - License: Creative Commons Zero (CC0)
+
+9. **Free Monster Enemy Sprites for Tower Defense**
+   - Creator: Free Game Assets (GUI, Sprite, Tilesets)
+   - Type: Monster / enemy sprite assets
+   - Source: https://free-game-assets.itch.io/free-monster-enemy-sprites-for-tower-defense
+   - License / Usage: Free asset pack; please refer to the original asset page for full usage terms.
+   
 ### Assets
 
 Image and audio assets are stored in the `assets/` folder and are used for the game interface, visual effects, and sound effects. These assets are used for educational purposes in this course project. All image and audio assets were created by the project developer for educational use.
